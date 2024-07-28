@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>给我心爱的孙策宝宝</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe4e1; /* 浅粉色背景 */
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffb6c1; /* 浅粉色调的标题背景 */
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+        }
+        .message {
+            background-color: #ffccd5; /* 更浅的粉色背景 */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sentence {
+            opacity: 0;
+            transition: opacity 1s;
+            display: block; /* 确保每句文字后有空行 */
+            margin-bottom: 1em; /* 空一行 */
+        }
+        .photos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .photo {
+            margin: 10px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .photo img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .photos-title {
+            font-size: 1.5em;
+            margin: 20px 0;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .additional-message {
+            opacity: 0;
+            transition: opacity 1s;
+            margin-top: 20px;
+            background-color: #ffccd5; /* 更浅的粉色背景 */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>给我心爱的孙策宝宝</header>
+    <main>
+        <div class="message" id="message">
+            <!-- 这里的每一句话都放在一个 span 标签中 -->
+            <span class="sentence">呜呜呜呜好想我的孙策宝宝！</span>
+            <span class="sentence">呜呜呜呜见过穿着各种各样帅气衣服的孙策，</span>
+            <span class="sentence">但是现在好想好想那个穿着麦当当衣服，领口还有两个小孙策的宝宝。</span>
+            <span class="sentence">昨天宝宝走后就想着如果每天都能见到小狗就好了呜呜呜，光是这样想就幸福得要哭出来。</span>
+            <span class="sentence">宝宝笑起来就像一颗小太阳！！</span>
+            <span class="sentence">无论是谁看到了都会变得开心！</span>
+            <span class="sentence">所以正是因为见到宝宝开心，回家的路上无论看到谁都很开心，一路上哼着歌就回家了嘿嘿.....</span>
+        </div>
+        <div class="photos-title" id="photos-title">接下来请欣赏昨天的帅气宝宝！</div>
+        <div class="photos" id="photos">
+            <div class="photo"><img src="images/1.jpg" alt="孙策宝宝1"></div>
+            <div class="photo"><img src="images/2.jpg" alt="孙策宝宝2"></div>
+            <div class="photo"><img src="images/3.jpg" alt="孙策宝宝3"></div>
+            <div class="photo"><img src="images/4.jpg" alt="孙策宝宝4"></div>
+            <div class="photo"><img src="images/5.jpg" alt="孙策宝宝5"></div>
+            <div class="photo"><img src="images/6.jpg" alt="孙策宝宝2"></div>
+            <div class="photo"><img src="images/7.jpg" alt="孙策宝宝3"></div>
+            <div class="photo"><img src="images/8.jpg" alt="孙策宝宝4"></div>
+            <div class="photo"><img src="images/9.jpg" alt="孙策宝宝5"></div>
+            <div class="photo"><img src="images/10.jpg" alt="孙策宝宝2"></div>
+            <div class="photo"><img src="images/11.jpg" alt="孙策宝宝3"></div>
+            <div class="photo"><img src="images/12.jpg" alt="孙策宝宝4"></div>
+            <div class="photo"><img src="images/13.jpg" alt="孙策宝宝5"></div>
+            <div class="photo"><img src="images/14.jpg" alt="孙策宝宝2"></div>
+            <!-- 更多照片可以继续添加 -->
+        </div>
+        <div class="additional-message" id="additional-message">
+            所以下次见到孙策是什么时候呢呜呜呜，想着就根本睡不着，
+            但是孙策宝宝今晚要补觉嘞，所以我想明天早上宝宝一醒来就知道我有话想对你说，
+            然后知道我有多么想你，有多么喜欢你！
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sentences = document.querySelectorAll('.sentence');
+            const photosTitle = document.getElementById('photos-title');
+            const photos = document.querySelectorAll('.photo');
+            const photosContainer = document.getElementById('photos');
+            const additionalMessage = document.getElementById('additional-message');
+            
+            sentences.forEach((sentence, index) => {
+                setTimeout(() => {
+                    sentence.style.opacity = 1;
+                }, index * 3000); // 每句延迟3秒出现
+            });
+            
+            setTimeout(() => {
+                photosTitle.style.opacity = 1;
+                photosContainer.style.opacity = 1;
+                photos.forEach((photo, index) => {
+                    setTimeout(() => {
+                        photo.style.opacity = 1;
+                    }, index * 1000); // 每张照片延迟1秒出现
+                });
+            }, sentences.length * 2000 + 1000); // 照片标题在所有文字出现后1秒出现
+            
+            setTimeout(() => {
+                additionalMessage.style.opacity = 1;
+            }, sentences.length * 2000 + photos.length * 1000 + 2000); // 附加信息在所有照片出现后2秒出现
+        });
+    </script>
+</body>
+</html>
